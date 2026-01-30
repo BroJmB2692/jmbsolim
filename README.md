@@ -12,7 +12,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* optional: makes it stay while scrolling */ }
-    header { background:#1f7a4d; color:#fff; padding:3rem 1rem; text-align:center; }
+    header { background:#1f7a4d; color:#fff; padding:1rem 1rem; text-align:center; }
     header h1 { margin:0; font-size:2.4rem; }
     nav { background:#145a36; padding:0.75rem; text-align:center; position:sticky; top:0; }
     nav a { color:#fff; margin:0 1rem; text-decoration:none; font-weight:bold; }
