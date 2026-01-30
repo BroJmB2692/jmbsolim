@@ -101,7 +101,7 @@
 </div>
 
 <footer>
-  <p>&copy; 2026 Your Company Name. All rights reserved.</p>
+  <p>&copy; 2026 Solutions In Motion. All rights reserved.</p>
   <p>Robotic lawn mower consulting and support. Independent service provider.</p>
 </footer>
 
