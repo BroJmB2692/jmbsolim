@@ -83,7 +83,7 @@
 
 <section id="contact">
   <h2>Contact & Booking</h2>
-  <p>style="color: white;">Service areas vary. Contact us to confirm availability.</p>
+  <p style="color: white;">Service areas vary. Contact us to confirm availability.</p>
   <form action="https://formspree.io/f/mlgnlyvq" method="POST">
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
