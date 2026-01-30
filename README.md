@@ -18,7 +18,7 @@
     nav a { color:#fff; margin:0 1rem; text-decoration:none; font-weight:bold; }
     nav a:hover { text-decoration:underline; }
     section { padding:3rem 1rem; max-width:1100px; margin:auto; }
-    h2 { color:#1f7a4d; }
+    h2 { color:#FFFFFF; }
     .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
     .card { background:#fff; padding:1.5rem; border-radius:10px; box-shadow:0 3px 8px rgba(0,0,0,0.08); }
     .cta { background:#1f7a4d; color:#fff; text-align:center; padding:1rem 1rem; }
