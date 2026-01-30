@@ -8,13 +8,10 @@
   <meta name="keywords" content="robotic lawn mower, Ecovacs Goat, Worx Landroid, robotic mower installation, boundary wire setup, mower optimization" />
   <style>
     body { margin: 0; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333;
-  /* Background image */
-  background: 
-    linear-gradient(rgba(247,249,251,0.85), rgba(247,249,251,0.85)),
-    url("solutionsinmotion.jpg");
+  background: url("solutionsinmotion.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; }
+  background-attachment: fixed; /* optional: makes it stay while scrolling */ }
     header { background:#1f7a4d; color:#fff; padding:3rem 1rem; text-align:center; }
     header h1 { margin:0; font-size:2.4rem; }
     nav { background:#145a36; padding:0.75rem; text-align:center; position:sticky; top:0; }
