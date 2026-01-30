@@ -21,7 +21,7 @@
     h2 { color:#1f7a4d; }
     .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
     .card { background:#fff; padding:1.5rem; border-radius:10px; box-shadow:0 3px 8px rgba(0,0,0,0.08); }
-    .cta { background:#1f7a4d; color:#fff; text-align:center; padding:3rem 1rem; }
+    .cta { background:#1f7a4d; color:#fff; text-align:center; padding:1rem 1rem; }
     .btn { display:inline-block; background:#1f7a4d; color:#fff; padding:0.75rem 1.25rem; border-radius:6px; text-decoration:none; font-weight:bold; }
     .btn.alt { background:#fff; color:#1f7a4d; }
     footer { background:#222; color:#ccc; text-align:center; padding:2rem 1rem; font-size:0.9rem; }
