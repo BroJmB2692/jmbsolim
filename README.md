@@ -104,5 +104,9 @@
   <p>Robotic lawn mower consulting and support. Independent service provider.</p>
 </footer>
 
+<div id="chat-widget">
+  <iframe src="chat/index.html" class="chat-frame"></iframe>
+</div>
+
 </body>
 </html>
