@@ -25,6 +25,23 @@
     .btn.alt { background:#fff; color:#1f7a4d; }
     footer { background:#222; color:#ccc; text-align:center; padding:2rem 1rem; font-size:0.9rem; }
     form input, form textarea, form select { width:100%; padding:0.75rem; margin:0.5rem 0; border-radius:4px; border:1px solid #ccc; }
+  #chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 380px;
+  height: 520px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  background: transparent;
+  z-index: 9999;
+  }
+  .chat-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
   </style>
 </head>
 <body>
