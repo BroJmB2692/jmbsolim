@@ -1,4 +1,4 @@
-const BACKEND_URL = "solutions-in-motion-ai-chat-backend.vercel.app/api/chat"; // <-- update if different
+const BACKEND_URL = "https://solutions-in-motion-ai-chat-backend.vercel.app/api/chat"; // <-- update if different
 document.getElementById("sendBtn").addEventListener("click", sendMessage);
 
 function addMessage(text, sender) {
