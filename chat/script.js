@@ -6,8 +6,8 @@ function addMessage(text, sender) {
   const message = document.createElement("div");
   message.classList.add("message", sender);
 
-  // Preserve line breaks and simple bold formatting
-  let formatted = text
+  // Safest formatting: only line breaks + bold
+  const formatted = text
     .replace(/\n/g, "<br>")
     .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
 
