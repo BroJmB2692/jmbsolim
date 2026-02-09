@@ -2,18 +2,19 @@ const BACKEND_URL = "https://solutions-in-motion-ai-chat-backend.vercel.app/api/
 document.getElementById("sendBtn").addEventListener("click", sendMessage);
 
 function addMessage(text, sender) {
-  const chatBox = document.getElementById("chat-box");
-  const message = document.createElement("div");
-  message.classList.add("message", sender);
+  const chat = document.getElementById("chat");
 
-  // Minimal safe formatting
-  const formatted = text
-    .replace(/\n/g, "<br>")
-    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+  const wrapper = document.createElement("div");
+  wrapper.className = `message ${sender}`;
 
-  message.innerHTML = formatted;
-  chatBox.appendChild(message);
-  chatBox.scrollTop = chatBox.scrollHeight;
+  const bubble = document.createElement("div");
+  bubble.className = "bubble";
+  bubble.textContent = text;
+
+  wrapper.appendChild(bubble);
+  chat.appendChild(wrapper);
+
+  chat.scrollTop = chat.scrollHeight;
 }
 
 async function sendMessage() {
