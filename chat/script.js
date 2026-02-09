@@ -10,7 +10,7 @@ function addMessage(text, sender) {
   const bubble = document.createElement("div");
   bubble.className = "bubble";
 
-  // Escape HTML first
+  // Escape HTML so nothing breaks
   let safe = text
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -18,6 +18,9 @@ function addMessage(text, sender) {
 
   // Convert Markdown bold
   safe = safe.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+
+  // Convert numbered lists
+  safe = safe.replace(/(\d+)\.\s+/g, "<br><strong>$1.</strong> ");
 
   // Convert line breaks
   safe = safe.replace(/\n/g, "<br>");
