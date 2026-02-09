@@ -10,19 +10,32 @@ function addMessage(text, sender) {
   const bubble = document.createElement("div");
   bubble.className = "bubble";
 
-  // Escape HTML so nothing breaks
+  // 1. Escape HTML so nothing breaks
   let safe = text
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
 
-  // Convert Markdown bold
+  // 2. Headings: ## Heading → <h2>Heading</h2>
+  safe = safe.replace(/^###\s+(.*)$/gm, "<h3>$1</h3>");
+  safe = safe.replace(/^##\s+(.*)$/gm, "<h2>$1</h2>");
+  safe = safe.replace(/^#\s+(.*)$/gm, "<h1>$1</h1>");
+
+  // 3. Bold + italics
+  safe = safe.replace(/\*\*\*(.*?)\*\*\*/g, "<strong><em>$1</em></strong>");
   safe = safe.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+  safe = safe.replace(/\*(.*?)\*/g, "<em>$1</em>");
 
-  // Convert numbered lists
-  safe = safe.replace(/(\d+)\.\s+/g, "<br><strong>$1.</strong> ");
+  // 4. Bullet lists: "- item"
+  safe = safe.replace(/^- (.*)$/gm, "<li>$1</li>");
+  safe = safe.replace(/(<li>[\s\S]*?<\/li>)/gm, "<ul>$1</ul>");
 
-  // Convert line breaks
+  // 5. Numbered lists: "1. item"
+  safe = safe.replace(/^\d+\.\s+(.*)$/gm, "<li>$1</li>");
+  safe = safe.replace(/(<li>[\s\S]*?<\/li>)/gm, "<ol>$1</ol>");
+
+  // 6. Paragraphs + line breaks
+  safe = safe.replace(/\n{2,}/g, "<br><br>");
   safe = safe.replace(/\n/g, "<br>");
 
   bubble.innerHTML = safe;
