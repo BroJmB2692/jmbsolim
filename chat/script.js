@@ -9,7 +9,9 @@ function addMessage(text, sender) {
 
   const bubble = document.createElement("div");
   bubble.className = "bubble";
-  bubble.textContent = text;
+
+  // SAFE: only convert line breaks to <br>
+  bubble.innerHTML = text.replace(/\n/g, "<br>");
 
   wrapper.appendChild(bubble);
   chat.appendChild(wrapper);
