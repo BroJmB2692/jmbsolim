@@ -6,17 +6,10 @@ function addMessage(text, sender) {
   const message = document.createElement("div");
   message.classList.add("message", sender);
 
-  // Convert Markdown to HTML (simple version)
+  // Preserve line breaks and simple bold formatting
   let formatted = text
     .replace(/\n/g, "<br>")
-    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-    .replace(/^\s*[-*]\s+(.*)/gm, "<li>$1</li>")
-    .replace(/(\d+)\.\s+(.*)/gm, "<br><strong>$1.</strong> $2");
-
-  // Wrap <li> items in <ul> if any exist
-  if (formatted.includes("<li>")) {
-    formatted = formatted.replace(/(<li>.*<\/li>)/gs, "<ul>$1</ul>");
-  }
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
 
   message.innerHTML = formatted;
   chatBox.appendChild(message);
