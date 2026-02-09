@@ -2,19 +2,25 @@ const BACKEND_URL = "https://solutions-in-motion-ai-chat-backend.vercel.app/api/
 document.getElementById("sendBtn").addEventListener("click", sendMessage);
 
 function addMessage(text, sender) {
-  const chat = document.getElementById("chat");
+  const chatBox = document.getElementById("chat-box");
+  const message = document.createElement("div");
+  message.classList.add("message", sender);
 
-  const wrapper = document.createElement("div");
-  wrapper.className = `message ${sender}`;
+  // Convert Markdown to HTML (simple version)
+  let formatted = text
+    .replace(/\n/g, "<br>")
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+    .replace(/^\s*[-*]\s+(.*)/gm, "<li>$1</li>")
+    .replace(/(\d+)\.\s+(.*)/gm, "<br><strong>$1.</strong> $2");
 
-  const bubble = document.createElement("div");
-  bubble.className = "bubble";
-  bubble.textContent = text;
+  // Wrap <li> items in <ul> if any exist
+  if (formatted.includes("<li>")) {
+    formatted = formatted.replace(/(<li>.*<\/li>)/gs, "<ul>$1</ul>");
+  }
 
-  wrapper.appendChild(bubble);
-  chat.appendChild(wrapper);
-
-  chat.scrollTop = chat.scrollHeight;
+  message.innerHTML = formatted;
+  chatBox.appendChild(message);
+  chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 async function sendMessage() {
