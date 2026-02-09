@@ -10,8 +10,19 @@ function addMessage(text, sender) {
   const bubble = document.createElement("div");
   bubble.className = "bubble";
 
-  // SAFE: only convert line breaks to <br>
-  bubble.innerHTML = text.replace(/\n/g, "<br>");
+  // Escape HTML first
+  let safe = text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+
+  // Convert Markdown bold
+  safe = safe.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+
+  // Convert line breaks
+  safe = safe.replace(/\n/g, "<br>");
+
+  bubble.innerHTML = safe;
 
   wrapper.appendChild(bubble);
   chat.appendChild(wrapper);
