@@ -16,26 +16,26 @@ function addMessage(text, sender) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
 
-  // 2. Headings: ## Heading → <h2>Heading</h2>
-  safe = safe.replace(/^###\s+(.*)$/gm, "<h3>$1</h3>");
-  safe = safe.replace(/^##\s+(.*)$/gm, "<h2>$1</h2>");
-  safe = safe.replace(/^#\s+(.*)$/gm, "<h1>$1</h1>");
+  // 2. Insert a blank line between numbered items and bullet lists
+  safe = safe.replace(/^(\d+\..*)\n- /gm, "$1\n\n- ");
 
   // 3. Bold + italics
   safe = safe.replace(/\*\*\*(.*?)\*\*\*/g, "<strong><em>$1</em></strong>");
   safe = safe.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
   safe = safe.replace(/\*(.*?)\*/g, "<em>$1</em>");
 
-  // 4. Bullet lists: "- item"
+  // 4. Bullet list items: "- item"
   safe = safe.replace(/^- (.*)$/gm, "<li>$1</li>");
-  safe = safe.replace(/(<li>[\s\S]*?<\/li>)/gm, "<ul>$1</ul>");
 
-  // 5. Numbered lists: "1. item"
-  safe = safe.replace(/^\d+\.\s+(.*)$/gm, "<li>$1</li>");
-  safe = safe.replace(/(<li>[\s\S]*?<\/li>)/gm, "<ol>$1</ol>");
+  // 5. Group consecutive <li> into a single <ul>
+  safe = safe.replace(/(<li>[\s\S]*?<\/li>)+/gm, match => {
+    return "<ul>" + match + "</ul>";
+  });
 
-  // 6. Paragraphs + line breaks
+  // 6. Convert double line breaks into paragraph spacing
   safe = safe.replace(/\n{2,}/g, "<br><br>");
+
+  // 7. Convert remaining single line breaks
   safe = safe.replace(/\n/g, "<br>");
 
   bubble.innerHTML = safe;
