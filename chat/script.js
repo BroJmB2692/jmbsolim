@@ -16,12 +16,15 @@ function addMessage(text, sender) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
 
-  // Normalize Windows line endings to Unix
+  // Normalize all line endings to Unix-style
   safe = safe.replace(/\r\n/g, "\n");
 
-  // Insert blank line between numbered items and bullet lists
-  safe = safe.replace(/^(\d+\..*)\n- /gm, "$1\n\n- ");
+  // Normalize any accidental double spaces before bullets
+  safe = safe.replace(/\n[ ]*- /g, "\n- ");
 
+  // Insert a blank line between numbered items and bullet lists
+  safe = safe.replace(/^(\d+\..*)\n- /gm, "$1\n\n- ");
+  
   // 3. Bold + italics
   safe = safe.replace(/\*\*\*(.*?)\*\*\*/g, "<strong><em>$1</em></strong>");
   safe = safe.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
