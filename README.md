@@ -91,7 +91,7 @@
 <section id="support">
   <h2>Ongoing Support Plans</h2>
   <div class="grid">
-    <div class="card"><h3>Basic</h3><p>$25/month – Email support & seasonal tuning.</p><a class="btn" href="https://buy.stripe.com/test_cNidR8bnjgHyfnz1eab7y00">Subscribe</a></div>
+    <div class="card"><h3>Basic</h3><p>$25/month – Email support & seasonal tuning.</p><a class="btn" href="https://buy.stripe.com/dRm8wR9U49PI4xi4evfYY01">Subscribe</a></div>
     <div class="card"><h3>Premium</h3><p>$49/month – Priority support, remote diagnostics, yearly on-site visit.</p><a class="btn" href="#stripe">Subscribe</a></div>
     <div class="card"><h3>Pro</h3><p>$79/month – Unlimited support, emergency response, optimization visits.</p><a class="btn" href="#stripe">Subscribe</a></div>
   </div>
