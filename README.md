@@ -81,8 +81,8 @@
 <section id="pricing">
   <h2>Pricing & Deposits</h2>
   <div class="grid">
-    <div class="card"><h3>Consultation</h3><p>$99 on-site or virtual assessment.</p><a class="btn" href="#stripe">Pay Deposit</a></div>
-    <div class="card"><h3>Installation</h3><p>Starting at $399 (yard size dependent).</p><a class="btn" href="#stripe">Pay Deposit</a></div>
+    <div class="card"><h3>Consultation</h3><p>$99 on-site or virtual assessment.</p><a class="btn" href="https://buy.stripe.com/eVqcN74zK6Dw3tefXdfYY04">Pay Deposit</a></div>
+    <div class="card"><h3>Installation</h3><p>Starting at $399 (yard size dependent).</p><a class="btn" href="https://buy.stripe.com/7sY6oJaY8e5Y9RCdP5fYY05">Pay Deposit</a></div>
     <div class="card"><h3>Optimization Visit</h3><p>$149 per visit.</p><a class="btn" href="#stripe">Book & Pay</a></div>
   </div>
   <p><strong>Payments:</strong> Secure checkout powered by <strong>Stripe</strong>. Apple Pay, Google Pay, and cards supported.</p>
